@@ -1,0 +1,29 @@
+# Binaries
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Go build artifacts
+*.test
+*.out
+vendor/
+
+# Config (may contain DB credentials)
+config.yaml
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*.vim
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
