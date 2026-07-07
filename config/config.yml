@@ -1,0 +1,13 @@
+#TODO: Add proper documentation for the config file and refine.
+pipeline:
+  source:
+    connector: "postgres"
+    tables: 
+      - "orders"
+    
+    filters:
+      - operations == UPDATE
+
+  sink:
+    - "kafka"
+    - "elasticsearch"
