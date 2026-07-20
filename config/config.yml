@@ -1,13 +1,20 @@
-#TODO: Add proper documentation for the config file and refine.
+# FluxCDC Configuration File
+database:
+  source_conn: "postgres://fluxcdc:fluxcdc@localhost:5432/source_db?sslmode=disable"
+  state_conn: "postgres://fluxcdc:fluxcdc@localhost:5432/fluxcdc_state?sslmode=disable"
+
+kafka:
+  brokers:
+    - "localhost:9092"
+  topic: "cdc-events"
+
 pipeline:
   source:
     connector: "postgres"
     tables: 
       - "orders"
-    
     filters:
-      - operations == UPDATE
+      - "operations == UPDATE"
 
   sink:
     - "kafka"
-    - "elasticsearch"
